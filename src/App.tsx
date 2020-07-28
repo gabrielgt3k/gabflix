@@ -16,6 +16,7 @@ const App: React.FC = () => (
     <Carousel ignoreFirstVideo category={data.categorias[0]} />
     <Carousel category={data.categorias[1]} />
     <Carousel category={data.categorias[2]} />
+    <Carousel category={data.categorias[3]} />
     <Footer />
   </>
 );
