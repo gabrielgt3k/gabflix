@@ -1,0 +1,164 @@
+{
+  "categorias": [
+    {
+      "titulo": "Futebol⚽",
+      "cor": "#1E5B3C",
+      "videos": [
+        {
+          "titulo": "Coletiva de imprensa PALMEIRAS 2 X ÁGUA SANTA 1",
+          "url": "https://www.youtube.com/watch?v=ENJ4s2V3VJs"
+        },     
+        {
+          "titulo": "DUDU SE EMOCIONA NA DESPEDIDA DO PALMEIRAS",
+          "url": "https://www.youtube.com/watch?v=9-RN09SlsuY"
+        },
+        {
+          "titulo": "DUDU SE EMOCIONA NA DESPEDIDA DO PALMEIRAS",
+          "url": "https://www.youtube.com/watch?v=9-RN09SlsuY"
+        },
+        {
+          "titulo": "DUDU SE EMOCIONA NA DESPEDIDA DO PALMEIRAS",
+          "url": "https://www.youtube.com/watch?v=9-RN09SlsuY"
+        },
+        {
+          "titulo": "DUDU SE EMOCIONA NA DESPEDIDA DO PALMEIRAS",
+          "url": "https://www.youtube.com/watch?v=9-RN09SlsuY"
+        },
+        {
+          "titulo": "DUDU SE EMOCIONA NA DESPEDIDA DO PALMEIRAS",
+          "url": "https://www.youtube.com/watch?v=9-RN09SlsuY"
+        }
+      ]
+    },
+    {
+      "titulo": "Programação💻",
+      "cor": "#00C86F",
+      "link_extra": {
+        "text": "Cursos de Back End na Alura",
+        "url": "https://www.alura.com.br/cursos-online-programacao"
+      },
+      "videos": [
+        {
+          "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
+          "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+        },
+        {
+          "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
+          "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+        },
+        {
+          "titulo": "Programei 4 robôs que criam vídeos para mim no YouTube",
+          "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
+        },
+        {
+          "titulo": "API: Dicionário do Programador",
+          "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+        }, 
+        {
+          "titulo": "Usando Git Direito",
+          "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+        }
+      ]
+    },
+    {
+      "titulo": "Heavy Metal 🤘",
+      "cor": "#1b1b9a",
+      "videos": [
+        {
+          "titulo": "Megadeth - Holy Wars... The Punishment Due (Live Sofia - Big Four 2010)",
+          "url": "https://www.youtube.com/watch?v=E9xj0-4_fdc&list=RDcPNL9HbWFXw&index=2"
+        },
+        {
+          "titulo": "The Four Horsemen",
+          "url": "https://www.youtube.com/watch?v=Wkvd7pbfM78&list=RDcPNL9HbWFXw&index=5"
+        },
+        {
+          "titulo": "Megadeth - Hangar 18 (HD)",
+          "url": "https://www.youtube.com/watch?v=B-oU2xlViRQ&list=RDcPNL9HbWFXw&index=6"
+        }
+      ]
+    },
+    {
+      "titulo": "Filmes",
+      "cor": "orange",
+      "videos": [
+        {
+          "titulo": "Interestellar",
+          "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+        },
+        {
+          "titulo": "Gattaca",
+          "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+        },
+        {
+          "titulo": "A Chegada",
+          "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+        },
+        {
+          "titulo": "Feitiço do Tempo",
+          "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+        }
+      ]
+    },
+    {
+      "titulo": "Games",
+      "cor": "red",
+      "link_extra": {
+        "text": "Formação de Jogos na Alura",
+        "url": "https://www.alura.com.br/formacao-jogos-unity"
+      },
+      "videos": [
+        {
+          "titulo": "Final Fantasy 7",
+          "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+        },
+        {
+          "titulo": "Assassins Creed Valhalla",
+          "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
+        },
+        {
+          "titulo": "God of War 4",
+          "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+        },
+        {
+          "titulo": "Resident Evil 8",
+          "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+        },
+        {
+          "titulo": "Pokémon Let's Go Pikachu/Eevee",
+          "url": "https://www.youtube.com/watch?v=L56q_k2ydrs"
+        }
+      ]
+    },
+    {
+      "titulo": "Aprendendo a aprender tecnologia",
+      "cor": "#6b5be2",
+      "link_extra": {
+        "text": "Curso sobre aprendizado na Alura",
+        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
+      },
+      "videos": [
+        {
+          "titulo": "Como estudar melhor?",
+          "url": "https://www.youtube.com/watch?v=Is6c9KSGCbk&feature=youtu.be"
+        },
+        {
+          "titulo": "Faculdade",
+          "url": "https://www.youtube.com/watch?v=jw06H8esyzQ&feature=youtu.be"
+        },
+        {
+          "titulo": "Frameworks",
+          "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
+        },
+        {
+          "titulo": "A mágica do Aprendizado",
+          "url": "https://www.youtube.com/watch?v=oTEXzpfEpPY"
+        },
+        {
+          "titulo": "Como aprender a programar?",
+          "url": "https://www.youtube.com/watch?v=MwCx2qKdbDw&feature=youtu.be"
+        }
+      ]
+    }
+  ]
+}
