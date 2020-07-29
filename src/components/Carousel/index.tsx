@@ -7,6 +7,8 @@ import {
   ExtraLink,
 } from './styles';
 import VideoCard from './components/VideoCard';
+import Slider from '../Slider';
+import { SliderItem } from '../Slider/styles';
 
 interface Video {
   titulo: string;
@@ -18,7 +20,7 @@ interface LinkExtra {
   text: string;
 }
 
-interface VideoCardGroupProps {
+interface CarouselProps {
   ignoreFirstVideo?: boolean;
   category: {
     titulo: string;
@@ -29,10 +31,7 @@ interface VideoCardGroupProps {
   };
 }
 
-const VideoCardGroup: React.FC<VideoCardGroupProps> = ({
-  ignoreFirstVideo,
-  category,
-}) => {
+const Carousel: React.FC<CarouselProps> = ({ ignoreFirstVideo, category }) => {
   const categoryTitle = category.titulo;
   const categoryColor = category.cor;
   const categoryExtraLink = category.link_extra;
@@ -51,25 +50,25 @@ const VideoCardGroup: React.FC<VideoCardGroupProps> = ({
           )}
         </>
       )}
-      <VideoCardList>
+      <Slider>
         {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
             return null;
           }
 
           return (
-            <li key={video.titulo}>
+            <SliderItem key={video.titulo}>
               <VideoCard
                 videoTitle={video.titulo}
                 videoURL={video.url}
                 categoryColor={categoryColor}
               />
-            </li>
+            </SliderItem>
           );
         })}
-      </VideoCardList>
+      </Slider>
     </VideoCardGroupContainer>
   );
 };
 
-export default VideoCardGroup;
+export default Carousel;

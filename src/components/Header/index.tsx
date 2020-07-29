@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoHackaflix from '../../assets/logo.png';
 import { Button } from './Button';
 import './Header.css';
@@ -6,11 +7,11 @@ import './Header.css';
 const Header: React.FC = () => {
   return (
     <nav className="Menu">
-      <a href="/">
+      <Link to="/">
         <img className="Logo" src={logoHackaflix} alt="Hackaflix logo" />
-      </a>
+      </Link>
 
-      <Button as="a" className="ButtonLink" href="/">
+      <Button as={Link} to="/cadastro/video" className="ButtonLink">
         Novo Vídeo
       </Button>
     </nav>
