@@ -23,10 +23,13 @@ export const VideoCardContainer = styled.a`
   align-items: flex-end;
   padding: 16px;
 
-  transition: opacity 0.3s;
+  transition: all 0.3s;
   &:hover,
   &:focus {
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    z-index: 101;
+    transform: scale(1.2);
+    border-color: #000 !important;
   }
 
   &:not(:first-child) {

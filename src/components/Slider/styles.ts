@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ArrowProps {
+  color: string;
+}
+
 export const Container = styled.div`
   padding: 0;
   margin: 0;
@@ -13,7 +17,8 @@ export const Container = styled.div`
     height: 30px;
     transform: initial;
     &:before {
-      font-size: 30px;
+      color: ${({ color }: ArrowProps) => color};
+      font-size: 40px;
     }
   }
 

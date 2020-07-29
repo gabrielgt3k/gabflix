@@ -1,11 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import SlickSlider from 'react-slick';
 
 import { Container } from './styles';
 
-const Slider: React.FC = ({ children }) => {
+interface ArrowProps {
+  color: string;
+}
+
+const Slider: React.FC<ArrowProps> = ({ children, color }) => {
   return (
-    <Container>
+    <Container color={color}>
       <SlickSlider
         {...{
           dots: true,
