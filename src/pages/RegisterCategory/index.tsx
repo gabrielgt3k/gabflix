@@ -6,6 +6,15 @@ const RegisterCategory: React.FC = () => {
   return (
     <PageDefault>
       <h1>Cadastro de categoria</h1>
+
+      <form>
+        <label htmlFor="name">
+          Nome da Categoria:
+          <input type="text" />
+        </label>
+
+        <button type="submit">Cadastrar</button>
+      </form>
       <Link to="/">Ir para home</Link>
     </PageDefault>
   );

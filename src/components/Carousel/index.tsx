@@ -1,11 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import {
-  VideoCardGroupContainer,
-  VideoCardList,
-  Title,
-  ExtraLink,
-} from './styles';
+import { VideoCardGroupContainer, Title, ExtraLink } from './styles';
 import VideoCard from './components/VideoCard';
 import Slider from '../Slider';
 import { SliderItem } from '../Slider/styles';

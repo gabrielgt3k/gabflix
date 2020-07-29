@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Main } from './styles';
 import Header from '../Header';

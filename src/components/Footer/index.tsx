@@ -11,7 +11,12 @@ const Footer: React.FC = () => {
         />
       </a>
       <p>
-        Orgulhosamente criado durante a
+        Criado por
+        <span> </span>
+        <a href="https://www.linkedin.com/in/gabriel-gt/">Gabriel Oliveira</a>
+        <span> </span>
+        durante
+        <span> </span>
         <a href="https://www.alura.com.br/">Imersão React da Alura</a>
       </p>
     </FooterBase>

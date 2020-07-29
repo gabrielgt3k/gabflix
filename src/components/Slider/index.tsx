@@ -8,8 +8,8 @@ const Slider: React.FC = ({ children }) => {
     <Container>
       <SlickSlider
         {...{
-          dots: false,
-          infinite: false,
+          dots: true,
+          infinite: true,
           speed: 300,
           centerMode: false,
           variableWidth: true,
