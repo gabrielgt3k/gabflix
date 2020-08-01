@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../components/PageDefault';
 import Field from '../../components/Field';
@@ -27,6 +27,15 @@ const RegisterCategory: React.FC = () => {
     });
   }
 
+  useEffect(() => {
+    async function loadData(): Promise<void> {
+      const response = await fetch('http://localhost:8000/categorias');
+      const json = await response.json();
+      setCategories(json);
+    }
+    loadData();
+  }, []);
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setCategories([...categories, category]);
@@ -54,8 +63,8 @@ const RegisterCategory: React.FC = () => {
           fieldType="textarea"
           label="Descrição"
           type="textarea"
-          name="name"
-          value={category.name}
+          name="description"
+          value={category.description}
           onChange={handleChange}
         />
         <Field

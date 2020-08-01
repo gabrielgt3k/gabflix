@@ -1,0 +1,16 @@
+{
+    "categorias": [
+      {
+        "id": 1,
+        "name": "Front End",
+        "description": "Vai se fuder mario souto",
+        "color": "#cbd1ff"
+      },
+      {
+        "id": 2,
+        "name": "Backend End",
+        "description": "Vai se fuder mario souto",
+        "color": "#cbd1ff"
+      }
+    ]
+}

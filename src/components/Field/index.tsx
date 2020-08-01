@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import React, { ChangeEvent } from 'react';
+import { FormFieldWrapper, Label, Input } from './styles';
 
 interface FieldProps {
   fieldType: 'input' | 'textarea';
   label: string;
   name: string;
-  value: string | number;
+  value: string;
   type: string;
   onChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void;
 }
@@ -17,21 +18,21 @@ const Field: React.FC<FieldProps> = ({
   value,
   type,
   onChange,
-}) =>
-  fieldType === 'input' ? (
-    <div>
-      <label htmlFor={name}>
-        {label}
-        <input name={name} type={type} value={value} onChange={onChange} />
-      </label>
-    </div>
-  ) : (
-    <div>
-      <label htmlFor={name}>
-        {label}
-        <textarea name={name} value={value} onChange={onChange} />
-      </label>
-    </div>
-  );
+}) => (
+  <FormFieldWrapper>
+    {fieldType === 'input' ? (
+      <Input
+        as={fieldType}
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+      />
+    ) : (
+      <Input as={fieldType} name={name} value={value} onChange={onChange} />
+    )}
+    <Label>{label}</Label>
+  </FormFieldWrapper>
+);
 
 export default Field;
