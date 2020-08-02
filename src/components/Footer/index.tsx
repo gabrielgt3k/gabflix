@@ -1,14 +1,12 @@
 import React from 'react';
 import { FooterBase } from './styles';
+import logo from '../../assets/logo.png';
 
 const Footer: React.FC = () => {
   return (
     <FooterBase>
-      <a href="https://www.alura.com.br/">
-        <img
-          src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg"
-          alt="Logo Alura"
-        />
+      <a href="https://www.linkedin.com/in/gabriel-gt/">
+        <img src={logo} alt="Logo" width="105" />
       </a>
       <p>
         Criado por

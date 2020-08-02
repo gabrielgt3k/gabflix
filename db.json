@@ -1,16 +1,34 @@
 {
-    "categorias": [
-      {
-        "id": 1,
-        "name": "Front End",
-        "description": "Vai se fuder mario souto",
-        "color": "#cbd1ff"
-      },
-      {
-        "id": 2,
-        "name": "Backend End",
-        "description": "Vai se fuder mario souto",
-        "color": "#cbd1ff"
-      }
-    ]
+  "categorias": [
+    {
+      "id": 1,
+      "name": "Futebol⚽",
+      "description": "Notícias do Palmeiras, melhores momentos e etc",
+      "color": "#1E5B3C"
+    },
+    {
+      "id": 2,
+      "name": "Programação💻",
+      "description": "Conteúdo sobre programação",
+      "color": "#00C86F"
+    },
+    {
+      "id": 3,
+      "name": "Heavy Metal 🤘",
+      "description": "Die!!",
+      "color": "#1b1b9a"
+    },
+    {
+      "id": 4,
+      "name": "Games🎮",
+      "description": "Conteúdo sobre games",
+      "color": "red"
+    },
+    {
+      "id": 5,
+      "name": "Backend End",
+      "description": "Programação backend",
+      "color": "#cbd1ff"
+    }
+  ]
 }
