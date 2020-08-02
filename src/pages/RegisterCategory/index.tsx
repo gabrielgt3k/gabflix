@@ -40,7 +40,7 @@ const RegisterCategory: React.FC = () => {
   useEffect(() => {
     async function loadData(): Promise<void> {
       setLoading(true);
-      const URL = process.env.REACT_APP_API_URL;
+      const URL = 'https://gabflix.herokuapp.com/';
       const response = await fetch(`${URL}/categorias`);
       const json = await response.json();
       setTimeout(() => {
@@ -59,7 +59,7 @@ const RegisterCategory: React.FC = () => {
     data.append('description', category.description);
     data.append('color', category.color);
 
-    const URL = process.env.REACT_APP_API_URL;
+    const URL = 'https://gabflix.herokuapp.com/';
 
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
