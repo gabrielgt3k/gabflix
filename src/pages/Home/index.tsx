@@ -1,25 +1,70 @@
-import React from 'react';
-import Header from '../../components/Header';
+import React, { useEffect, useState } from 'react';
+import PageDefault from '../../components/PageDefault';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import Footer from '../../components/Footer';
-import data from '../../data/dados_iniciais.json';
+import CategoriesRepository from '../../repositories/categories';
+
+interface Video {
+  id: number;
+  categoriaId: number;
+  titulo: string;
+  url: string;
+}
+
+interface InitialData {
+  id: number;
+  name: string;
+  description: string;
+  color: string;
+  videos: Video[];
+}
 
 const Home: React.FC = () => {
+  const [initialData, setInitialData] = useState<InitialData[]>([
+    {
+      id: 0,
+      name: 'string',
+      description: 'string',
+      color: 'string',
+      videos: [
+        {
+          id: 0,
+          categoriaId: 0,
+          titulo: '',
+          url: '',
+        },
+      ],
+    },
+  ]);
+
+  useEffect(() => {
+    CategoriesRepository.getAllWithVideos()
+      .then(categoriesWithVideos => {
+        setInitialData(categoriesWithVideos);
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  }, []);
+
   return (
-    <>
-      <Header />
-      <BannerMain
-        videoTitle={data.categorias[0].videos[0].titulo}
-        url={data.categorias[0].videos[0].url}
-        videoDescription="Entrevista coletiva de imprensa do técnico Vanderlei Luxemburgo após a partida entre Palmeiras e Água Santa, válida pelo Campeonato Paulista de 2020."
-      />
-      <Carousel ignoreFirstVideo category={data.categorias[0]} />
-      <Carousel category={data.categorias[1]} />
-      <Carousel category={data.categorias[2]} />
-      <Carousel category={data.categorias[3]} />
-      <Footer />
-    </>
+    initialData && (
+      <PageDefault removePadding>
+        <BannerMain
+          videoTitle={initialData[0].videos[0].titulo}
+          url={initialData[0].videos[0].url}
+          videoDescription="Entrevista coletiva de imprensa do técnico Vanderlei Luxemburgo após a partida entre Palmeiras e Água Santa, válida pelo Campeonato Paulista de 2020."
+        />
+
+        {initialData.map((data, index) => {
+          if (index === 0) {
+            return <Carousel key={data.id} ignoreFirstVideo category={data} />;
+          }
+
+          return <Carousel key={data.id} category={data} />;
+        })}
+      </PageDefault>
+    )
   );
 };
 

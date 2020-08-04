@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface Props {
+  removePadding?: boolean;
+}
 
 export const Main = styled.main`
   display: flex;
@@ -9,4 +13,9 @@ export const Main = styled.main`
   padding-top: 50px;
   padding-left: 5%;
   padding-right: 5%;
+  ${({ removePadding }: Props) =>
+    removePadding &&
+    css`
+      padding: 0;
+    `}
 `;

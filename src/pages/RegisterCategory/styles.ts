@@ -1,42 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 interface Props {
   color: string;
 }
-
-export const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const Loading = styled.div`
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  span {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 18px;
-    letter-spacing: 2px;
-  }
-
-  img {
-    animation: ${rotate} 2s linear infinite;
-    border-radius: 50%;
-    border: 2px solid var(--white);
-
-    & + img {
-      margin-left: 14px;
-    }
-  }
-`;
 
 export const Categories = styled.section`
   display: flex;

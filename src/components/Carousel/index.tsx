@@ -18,17 +18,17 @@ interface LinkExtra {
 interface CarouselProps {
   ignoreFirstVideo?: boolean;
   category: {
-    titulo: string;
+    name: string;
     link?: string;
-    cor: string;
+    color: string;
     link_extra?: LinkExtra;
     videos: Video[];
   };
 }
 
 const Carousel: React.FC<CarouselProps> = ({ ignoreFirstVideo, category }) => {
-  const categoryTitle = category.titulo;
-  const categoryColor = category.cor;
+  const categoryTitle = category.name;
+  const categoryColor = category.color;
   const categoryExtraLink = category.link_extra;
   const { videos } = category;
   return (

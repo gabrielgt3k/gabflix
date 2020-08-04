@@ -4,11 +4,15 @@ import { Main } from './styles';
 import Header from '../Header';
 import Footer from '../Footer';
 
-const PageDefault: React.FC = ({ children }) => {
+interface Props {
+  removePadding?: boolean;
+}
+
+const PageDefault: React.FC<Props> = ({ children, removePadding }) => {
   return (
     <>
       <Header />
-      <Main>{children}</Main>
+      <Main removePadding={removePadding}>{children}</Main>
       <Footer />
     </>
   );

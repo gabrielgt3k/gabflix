@@ -1,15 +1,13 @@
 import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiChevronLeft } from 'react-icons/fi';
-import { Loading, Categories, Category, BackHome } from './styles';
+import { Categories, Category, BackHome } from './styles';
+import CategoriesRepository from '../../repositories/categories';
 import PageDefault from '../../components/PageDefault';
 import Field from '../../components/Field';
+import Loading from '../../components/Loading';
 import { Button } from '../../components/Header/Button';
-
-import egirl from '../../assets/ju-egirl.png';
-import souto from '../../assets/souto.png';
-import paulo from '../../assets/paulo.png';
-import boss from '../../assets/boss.png';
+import config from '../../config';
 
 interface Category {
   id?: number;
@@ -18,14 +16,12 @@ interface Category {
   color: string;
 }
 
-const RegisterCategory: React.FC = () => {
+function useForm() {
   const [category, setCategory] = useState<Category>({
     name: '',
     description: '',
     color: '#DB202C',
   });
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [loading, setLoading] = useState(false);
 
   function handleChange(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -37,45 +33,54 @@ const RegisterCategory: React.FC = () => {
     });
   }
 
-  useEffect(() => {
-    async function loadData(): Promise<void> {
-      setLoading(true);
-      const URL = 'https://gabflix.herokuapp.com';
-      const response = await fetch(`${URL}/categorias`);
-      const json = await response.json();
-      setTimeout(() => {
-        setLoading(false);
-        setCategories(json);
-      }, 1500);
-    }
-    loadData();
-  }, []);
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const data = new FormData();
-    data.append('name', category.name);
-    data.append('description', category.description);
-    data.append('color', category.color);
-
-    const URL = 'https://gabflix.herokuapp.com';
-
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
-    await fetch(`${URL}/categorias`, {
-      body: JSON.stringify(category),
-      method: 'POST',
-      headers,
-    });
-
-    setCategories([...categories, category]);
+  function clearForm() {
     setCategory({
       name: '',
       description: '',
       color: category.color,
     });
+  }
+
+  return {
+    category,
+    handleChange,
+    clearForm,
+  };
+}
+
+const RegisterCategory: React.FC = () => {
+  const { API_URL } = config;
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(false);
+  const { category, handleChange, clearForm } = useForm();
+
+  useEffect(() => {
+    setLoading(true);
+
+    CategoriesRepository.findAll()
+      .then(response => {
+        setTimeout(() => {
+          setCategories(response);
+          setLoading(false);
+        }, 1500);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    await fetch(`${API_URL}/categorias`, {
+      body: JSON.stringify(category),
+      method: 'POST',
+      headers,
+    });
+
+    clearForm();
+    setCategories([...categories, category]);
   }
 
   return (
@@ -111,17 +116,7 @@ const RegisterCategory: React.FC = () => {
         <Button type="submit">Cadastrar</Button>
       </form>
 
-      {loading && (
-        <Loading>
-          <span>Carregando...</span>
-          <div>
-            <img src={egirl} alt="egirl" />
-            <img src={souto} alt="souto" />
-            <img src={paulo} alt="paulo" />
-            <img src={boss} alt="boss" />
-          </div>
-        </Loading>
-      )}
+      {loading && <Loading />}
       <Categories>
         {!loading && <h1>Categorias</h1>}
         <ul>
